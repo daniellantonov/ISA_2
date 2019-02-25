@@ -1,4 +1,4 @@
-﻿@model Facade.EmployeeViewModel
+﻿@model Facade.EmployeeListViewModel
 
 @{
     Layout = null;
@@ -14,11 +14,19 @@
     Hello @Model.UserName
     <hr/>
     <div>
-        <b>Employee Details</b><br/>
-        Employee Name: @Model.EmployeeName <br/>
-        <span style="background-color:@Model.SalaryColor">
-            Employee salary: @Model.Salary
-        </span>
+        <table>
+            <tr>
+                <th>Employee Name</th>
+                <th>Salary</th>
+            </tr>
+            @foreach (EmployeeViewModel item in Model.Employees)
+    {
+        <tr>
+            <td>@item.EmployeeName</td>
+            <td style="background-color: @item.SalaryColor">@item.Salary</td>
+        </tr>
+}
+        </table>
     </div>
 </body>
 </html>
