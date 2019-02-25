@@ -25,6 +25,7 @@ namespace Laborid.Controllers
                 Salary = 50000
             };
             ViewData["Employee"] = emp;
+            ViewBag.Employee = emp;
             return View("MyView");
         }
     }
