@@ -1,6 +1,6 @@
 using System;
 
-namespace Laborid.Models
+namespace Facade
 {
     public class ErrorViewModel
     {

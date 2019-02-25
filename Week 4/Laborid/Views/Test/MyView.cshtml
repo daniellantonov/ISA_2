@@ -1,5 +1,4 @@
-﻿@using ASP.NET_MVC.Models;
-@model Employee
+﻿@model Facade.EmployeeViewModel
 
 @{
     Layout = null;
@@ -12,21 +11,14 @@
     <title>MyView</title>
 </head>
 <body>
-    Welcome to MVC learning!
+    Hello @Model.UserName
+    <hr/>
     <div>
-        Employee Name: @Model.FirstName @Model.LastName <br />
-        @if (Model.Salary > 15000)
-        {
-            <span style="background-color: yellow">
-                Employee Salary: @Model.Salary.ToString("C")
-            </span>
-        }
-        else
-        {
-            <span style="background-color: green">
-                Employee Salary: @Model.Salary.ToString("C")
-            </span>
-        }
+        <b>Employee Details</b><br/>
+        Employee Name: @Model.EmployeeName <br/>
+        <span style="background-color:@Model.SalaryColor">
+            Employee salary: @Model.Salary
+        </span>
     </div>
 </body>
 </html>

@@ -4,7 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Laborid.Models;
+using Core;
+using Facade;
 
 namespace Laborid.Controllers
 {

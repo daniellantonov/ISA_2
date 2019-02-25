@@ -12,4 +12,8 @@
   <ItemGroup>
     <Folder Include="Views\Test\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\Facade\Facade.csproj" />
+  </ItemGroup>
 </Project>
