@@ -18,15 +18,11 @@ namespace Laborid.Controllers
         // GET: /<controller>/
         public IActionResult GetView()
         {
-            Employee emp = new Employee
-            {
-                FirstName = "Daniel",
-                LastName = "Antonov",
-                Salary = 50000
-            };
-            ViewData["Employee"] = emp;
-            ViewBag.Employee = emp;
-            return View("MyView");
+            Employee emp = new Employee();
+            emp.FirstName = "Daniel";
+            emp.LastName = "Antonov";
+            emp.Salary = 50000;
+            return View("MyView", emp);
         }
     }
 }

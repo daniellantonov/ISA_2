@@ -1,4 +1,5 @@
 ﻿@using ASP.NET_MVC.Models;
+@model Employee
 
 @{
     Layout = null;
@@ -13,13 +14,19 @@
 <body>
     Welcome to MVC learning!
     <div>
-        @{
-            var emp = (Employee)
-            ViewBag.Employee;
+        Employee Name: @Model.FirstName @Model.LastName <br />
+        @if (Model.Salary > 15000)
+        {
+            <span style="background-color: yellow">
+                Employee Salary: @Model.Salary.ToString("C")
+            </span>
         }
-        <b>Employee Details</b><br />
-        Employee Name: @emp.FirstName @emp.LastName <br />
-        Employee Salary: @emp.Salary.ToString("C")
+        else
+        {
+            <span style="background-color: green">
+                Employee Salary: @Model.Salary.ToString("C")
+            </span>
+        }
     </div>
 </body>
 </html>
