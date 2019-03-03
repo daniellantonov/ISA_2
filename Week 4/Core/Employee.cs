@@ -24,6 +24,7 @@ namespace Core
         public string FirstName { get; set; }
         [NameValidation]
         public string LastName { get; set; }
+        [SalaryValidation]
         public int Salary { get; set; }
     }
 }
