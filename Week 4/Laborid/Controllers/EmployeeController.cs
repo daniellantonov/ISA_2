@@ -11,13 +11,13 @@ using Infra;
 
 namespace Laborid.Controllers
 {
-    public class TestController : Controller
+    public class EmployeeController : Controller
     {
         private readonly SalesDbContext db;
 
-        public TestController(SalesDbContext db) { this.db = db; }
+        public EmployeeController(SalesDbContext db) { this.db = db; }
         
-        public ActionResult GetView()
+        public ActionResult Index()
         {
             
             var model = new EmployeeListViewModel();
@@ -29,8 +29,13 @@ namespace Laborid.Controllers
                 list.Add(employee);
             }
             model.Employees = list;
-            model.UserName = "Admin";
-            return View("MyView", model);
+            
+            return View("Index", model);
+        }
+
+        public ActionResult AddNew()
+        {
+            return View("CreateEmployee");
         }
     }
 }
