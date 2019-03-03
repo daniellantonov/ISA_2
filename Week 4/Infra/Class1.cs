@@ -1,21 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Core;
+using Microsoft.CodeAnalysis;
 
 namespace Infra
 {
     public static class Employees
     {
-        public static List<Employee> Get()
+
+            public static List<Employee> Get(SalesDbContext db)
         {
-            var employees = new List<Employee>
-                {
-                    new Employee("John", "Doe", 14000),
-                    new Employee("Michael", "Jackson", 16000),
-                    new Employee("Robert", "Pattinson", 20000)
-                };
-            return employees;
+            return db.Employees.ToList();
         }
     }
 }

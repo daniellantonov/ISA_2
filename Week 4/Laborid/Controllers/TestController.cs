@@ -13,16 +13,15 @@ namespace Laborid.Controllers
 {
     public class TestController : Controller
     {
-        public string GetString()
-        {
-            return "Hello World!";
-        }
-        // GET: /<controller>/
+        private readonly SalesDbContext db;
+
+        public TestController(SalesDbContext db) { this.db = db; }
+        
         public ActionResult GetView()
         {
-            var emp = new Employee("Daniel", "Antonov", 20000);
+            
             var model = new EmployeeListViewModel();
-            var employees = Employees.Get();
+            var employees = Employees.Get(db);
             var list = new List<EmployeeViewModel>();
             foreach (var e in employees)
             {
