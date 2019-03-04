@@ -28,6 +28,8 @@ namespace ASP.NET_MVC
 
             services.AddAuthentication("AuthScheme").AddCookie("AuthScheme",
                 options => { options.LoginPath = new PathString("/Authentication/Login"); });
+            services.AddDistributedMemoryCache();
+            services.AddSession();
             services.AddMvc();
 
             //services.Configure<CookiePolicyOptions>(options =>
@@ -59,7 +61,7 @@ namespace ASP.NET_MVC
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
-
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

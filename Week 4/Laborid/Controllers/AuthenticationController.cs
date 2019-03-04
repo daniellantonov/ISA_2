@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Core;
 using Infra;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Laborid.Controllers
@@ -25,6 +26,7 @@ namespace Laborid.Controllers
                 if (Employees.IsValidUser(u))
                 {
                     await setIdentity(u);
+                    HttpContext.Session.SetString("SessionKeyName", u.UserName);
                     return RedirectToAction("Index", "Employee");
                 }
                 ModelState.AddModelError("CredentialError", "Invalid Username or Password");

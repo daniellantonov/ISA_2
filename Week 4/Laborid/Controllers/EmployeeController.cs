@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Core;
 using Facade;
 using Infra;
+using Microsoft.AspNetCore.Authorization;
+using ASP.NET_MVC.Filters;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -36,12 +38,15 @@ namespace Laborid.Controllers
             return View("Index", model);
         }
 
+        [Authorize]
+        [AdminFilter]
         public ActionResult AddNew()
         {
             return View("CreateEmployee", new CreateEmployeeViewModel());
         }
 
-
+        [Authorize]
+        [AdminFilter]
         public ActionResult SaveEmployee(Employee e, string BtnSubmit)
         {
             if (BtnSubmit != "Save Employee") return RedirectToAction("Index");
