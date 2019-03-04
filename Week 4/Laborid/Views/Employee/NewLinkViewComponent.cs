@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ASP.NET_MVC.Views.Employee
+namespace Laborid.Views.Employee
 {
     public class NewLinkViewComponent : ViewComponent
     {

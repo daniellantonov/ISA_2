@@ -19,7 +19,7 @@ namespace Core
             Salary = salary;
         }
 
-        public int EmployeeId { get; set; }
+        public int EmployeeID { get; set; }
         [NameValidation]
         public string FirstName { get; set; }
         [NameValidation]

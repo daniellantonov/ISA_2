@@ -1,4 +1,5 @@
 ﻿@using Facade
+
 @model Facade.EmployeeListViewModel
 @{
     ViewBag.Title = "Employees";
@@ -24,10 +25,16 @@
             </tr>
             @foreach (var item in Model.Employees)
             {
-                <tr>
-                    <td>@item.EmployeeName</td>
-                    <td style="background-color: @item.SalaryColor">@item.Salary</td>
-                </tr>
+            <tr>
+                <td>@item.EmployeeName</td>
+                <td style="background-color: @item.SalaryColor">@item.Salary</td>
+                <td>
+                    <a>
+                        <a asp-action="Edit" asp-route-id="@item.EmployeeID">Edit</a> 
+                        <a asp-action="Delete" asp-route-id="@item.EmployeeID">Delete</a>
+                    </a>
+                </td>
+            </tr>
             }
         </table>
         @{

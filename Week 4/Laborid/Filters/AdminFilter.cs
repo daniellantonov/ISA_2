@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace ASP.NET_MVC.Filters
+namespace Laborid.Filters
 {
     public class AdminFilter : ActionFilterAttribute
     {

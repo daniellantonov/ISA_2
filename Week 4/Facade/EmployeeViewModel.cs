@@ -13,6 +13,7 @@ namespace Facade
             SetColor(emp);
         }
 
+        public int EmployeeID { get; set; }
         public string EmployeeName { get; set; }
         public string Salary { get; set; } = 0.ToString("C");
         public string SalaryColor { get; private set; } = "red";
