@@ -8,7 +8,22 @@ namespace Facade
 {
     public class FooterViewModel
     {
-        public string CompanyName { get; set; }
+        public FooterViewModel(string company)
+        {
+            SetCompanyName(company);
+            SetYear();
+        }
+        public string CompanyName { get; set; } = "TalTech";
         public string Year { get; set; }
+
+        public void SetCompanyName(string c)
+        {
+            CompanyName = c;
+        }
+
+        internal void SetYear()
+        {
+            Year = DateTime.Now.Year.ToString();
+        }
     }
 }

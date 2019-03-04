@@ -34,9 +34,7 @@ namespace Laborid.Controllers
                 list.Add(employee);
             }
             model.Employees = list;
-            model.FooterData = new FooterViewModel();
-            model.FooterData.CompanyName = "TalTech";
-            model.FooterData.Year = DateTime.Now.Year.ToString();
+            model.FooterData = new FooterViewModel("TalTech");
             return View("Index", model);
         }
 
