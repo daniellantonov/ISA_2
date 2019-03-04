@@ -21,6 +21,7 @@ namespace Laborid.Controllers
         {
             
             var model = new EmployeeListViewModel();
+            model.UserName = User.Identity.Name;
             var employees = Employees.Get(db);
             var list = new List<EmployeeViewModel>();
             foreach (var e in employees)

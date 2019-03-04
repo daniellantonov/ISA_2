@@ -29,6 +29,13 @@ namespace Laborid.Controllers
             return View("Login");
         }
 
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(
+                scheme: "AuthScheme");
+            return RedirectToAction("Login");
+        }
+
         private async Task setIdentity(UserDetails u)
         {
             List<Claim> claims = new List<Claim> { new Claim(ClaimTypes.Name, u.UserName) };
