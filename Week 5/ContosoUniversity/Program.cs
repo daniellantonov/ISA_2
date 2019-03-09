@@ -36,11 +36,6 @@ namespace ContosoUniversity
             host.Run();
         }
 
-        private static object BuildWebHost(string[] args)
-        {
-            throw new NotImplementedException();
-        }
-
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
