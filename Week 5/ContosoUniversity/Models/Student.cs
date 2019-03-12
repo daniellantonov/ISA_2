@@ -8,8 +8,9 @@ namespace ContosoUniversity.Models
     public class Student
     {
         public int ID { get; set; }
-        [Display(Name = "Last Name")]
-        [StringLength(50, MinimumLength = 1)]
+        [Required]
+        [StringLength(50)]
+        //[Display(Name = "Last Name")]
         public string LastName { get; set; }
         [Required]
         [StringLength(50)]
