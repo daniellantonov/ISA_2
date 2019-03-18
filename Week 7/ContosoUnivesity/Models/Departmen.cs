@@ -1,4 +1,4 @@
-﻿using ContosoUniversity.Models;
+﻿using ContosoUnivesity.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
