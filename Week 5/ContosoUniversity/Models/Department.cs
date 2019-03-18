@@ -13,8 +13,7 @@ namespace ContosoUniversity.Models
         public string Name { get; set; }
 
         [DataType(DataType.Currency)]
-
-       [Column(TypeName = "money")]
+        [Column(TypeName = "money")]
         public decimal Budget { get; set; }
 
         [DataType(DataType.Date)]
@@ -23,6 +22,9 @@ namespace ContosoUniversity.Models
         public DateTime StartDate { get; set; }
 
         public int? InstructorID { get; set; }
+
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
 
         public Instructor Administrator { get; set; }
         public ICollection<Course> Courses { get; set; }
