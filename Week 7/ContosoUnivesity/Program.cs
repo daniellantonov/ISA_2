@@ -1,4 +1,5 @@
-﻿using ContosoUnivesity.Models;
+﻿using ContosoUnivesity.Data;
+using ContosoUnivesity.Models;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
